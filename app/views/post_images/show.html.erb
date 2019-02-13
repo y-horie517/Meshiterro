@@ -10,6 +10,9 @@
             </div>
             </div>
             <div class="post-content">
+              <%= attachment_image_tag @post_image.user, :profile_image, fallback: "no_image.jpg", size:"100x100", class: "img-circle pull-left profile-thumb" %>
+
+
                 <h2 class="post-title"><%= @post_image.shop_name %></h2>
                 <ul class="meta-info-cells v4 float-wrapper">
                 <li>
@@ -52,7 +55,7 @@
                     <p><%= @post_image.caption %></p>
                 </div>
             </div>
-
+<!-- コメントリスト -->
           <div class="comment-list bt style-2" id="comments">
             <div class="float-wrapper">
               <h2 class="comment-count"><%= @post_image.post_comments.count  %>件コメント</h2>
@@ -63,7 +66,7 @@
                       <div class="comment-body bb">
                           <div class="comment-avatar">
                               <div class="avatar">
-                                  <%= image_tag('sample-author1.jpg', style: "width: 60px; height: 60px;") %>
+                                  <%= attachment_image_tag post_comment.user, :profile_image, fallback: "no_image.jpg", size:"100x100", class: "img-circle pull-left profile-thumb" %>
                               </div>
                           </div>
                           <div class="comment-text">
